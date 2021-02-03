@@ -47,15 +47,24 @@ have covered -->
         <a class="navbar-brand" href="map.html">Map</a>
       </div>
     </nav>
-    <header><h2 class="text-center">The Place Keeper</h2></header>
+    <header><h2 class="text-center mt-4">The Place Keeper</h2></header>
     <main>
-      <div class="container">
+      <div class="container w-75 mt-4">
         <div id="map" class="map-div"></div>
+        <img class="img-location" src="img/location-icon.png" alt="location" onclick="getCurrLocation()">
       </div>
     </main>
+    <aside>
+      <p id="latitude">latitude</p>
+      <p id="longitude">longitude</p>
+      <p id="accuracy">accuracy</p>
+      <p id="timestamp">timestamp</p>
+      <p id="locationError">Error</p>
+    </aside>
 
     <footer class="footer">&copy; Coffee Rights</footer>
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArPfnniO-fbEgEPLFtiwE1CUP3C8-Dml4&callback=mapReady">
     </script>
