@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place Keeper</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body onload="onInitPrefs()">
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-md">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand" href="user-prefs.html">Prefrences</a>
+        <a class="navbar-brand" href="map.html">Map</a>
+      </div>
+    </nav>
+
+    <header><h2 class="text-center mt-4">Make this site yours</h2></header>
+
+    <main>
+      <div class="form-container container container-md w-50">
+        <form onsubmit="onSavePrefs(event)">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="user-email" required>
+              </div>
+
+            <div class="mb-3">
+              <label for="bgc" class="form-label">Favorite background color</label>
+              <input type="color" class="form-control" id="bgc" name="user-bgc">
+            </div>
+
+            <div class="mb-3">
+              <label for="txt-color" class="form-label">Favorite text color</label>
+              <input type="color" class="form-control" id="txt-color" name="user-txt-color">
+            </div>
+
+            <div class="mb-3">
+              <label for="date-of-birth" class="form-label">Birth date and time</label>
+              <input type="datetime-local" class="form-control" id="date-of-birth" name="user-bday">
+            </div>
+
+            <div class="mb-3">
+                <label for="user-age" class="form-label">Age: <span class="ageVal" id="age-value"></span></label>
+                <input type="range" class="form-range" min="3" max="90" step="1" id="user-age" name="user-age" onchange="showAge(this.value)">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+          </form>
+      </div>
+    </main>
+
+    <footer class="footer">&copy; Coffee Rights</footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/services/placeService.js"></script>
+    <script src="js/services/userPrefService.js"></script>
+    <script src="js/services/storageService.js"></script>
+    <script src="js/services/utilService.js"></script>
+    <script src="js/user-prefs-controller.js"></script>
+  </body>
+</html>

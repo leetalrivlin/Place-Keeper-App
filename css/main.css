@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    background-color: lightsalmon;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    padding: 0.8rem;
+    background-color: rgb(32, 29, 29);
+    color: rgb(243, 243, 243);
+    text-align: center;
+}
