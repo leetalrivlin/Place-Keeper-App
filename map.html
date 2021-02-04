@@ -13,33 +13,6 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body onload="onInitMap()">
-    <!-- Remember to use the <section, nav, main, aside, header,footer> semantic elements
-Use ES6 throughout your code. -->
-
-    <!-- Here we will show a map and allow users to manage their places.
-Tips:
-• Use the 'create Google Api' doc to create an API key and secure it.
-• This ex involves self learning and handling new documentation that we
-haven’t met yet.
-• Self learning new technologies is a big part of being a pro programmer!  -->
-
-    <!-- Steps
-• Show a map centered at Eilat, when user clicks the button
-(search for "my location png" in google), get his current location
-and center the map accordingly.
-o Something like:
-map.setCenter(new google.maps.LatLng( 45, 19 )
-• When a user clicks on the map, the user is prompted to enter a
-name and the clicked location is saved to a places array in the
-localStorage.
-o BONUS: use inputs
-• Show the list and allow the user to remove a place.
-• Use a place-service that manages the place entity, a place object
-looks like that:
-{id: 123, lat: 32.1416, lng: 34.831213, name: 'Pukis house'}
-• Add navigation links to all pages.
-• Bonus: Create more pages and try out some HTML5 features we
-have covered -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-md">
         <a class="navbar-brand" href="index.html">Home</a>
@@ -51,23 +24,29 @@ have covered -->
     <main>
       <div class="container w-75 mt-4">
         <div id="map" class="map-div"></div>
-        <img class="img-location" src="img/location-icon.png" alt="location" onclick="getCurrLocation()">
+        <img
+          class="img-location"
+          src="img/location-icon.png"
+          alt="location"
+          onclick="getCurrLocation()"
+        />
       </div>
     </main>
     <aside>
-      <p id="latitude">latitude</p>
-      <p id="longitude">longitude</p>
-      <p id="accuracy">accuracy</p>
-      <p id="timestamp">timestamp</p>
-      <p id="locationError">Error</p>
+      <div class="container mb-5 w-75">
+        <ul class="list-group">
+        </ul>
+      </div>
     </aside>
 
     <footer class="footer">&copy; Coffee Rights</footer>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArPfnniO-fbEgEPLFtiwE1CUP3C8-Dml4&callback=mapReady">
-    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArPfnniO-fbEgEPLFtiwE1CUP3C8-Dml4&callback=mapReady"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
       integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
